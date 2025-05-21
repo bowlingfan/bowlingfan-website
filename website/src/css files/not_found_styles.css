@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'sharetech-regular';
+  src: url(https://extremities.neocities.org/mainFont/sharetech-regular-webfont.woff);
+}
+      
+body {
+  color: white; 
+  background: rgba(0,0,6,1);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'sharetech-regular';
+}
+
+.container {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img {
+  pointer-events: none; 
+}
+
+a { /* removes the blue link */
+  color: inherit; 
+  text-decoration: none; 
+}
+
+
+@keyframes flashError {
+  0% {opacity: 1;}
+  14% {opacity : 0.7;}
+  26% {opacity: 0.9;}
+  29% {opacity: 0.85;}
+  35% {opacity: 0.81;}
+  44% {opacity: 0.55;}
+  55% {opacity: 0.68;}
+  59% {opacity: 0.49;}
+  68% {opacity: 0.65;}
+  75% {opacity: 1;}
+  79% {opacity: 0.72;}
+  83% {opacity: 0.74;}
+  85% {opacity: 0.78;}
+  90% {opacity: 0.82;}
+  95% {opacity: 0.91}
+  100% {opacity: 1;}
+}
+
+.container > h1 {
+  text-align:center;
+  animation-name: flashError;
+  animation-duration: 2s;
+  /*animation-timing-function: step-end;*/
+  animation-iteration-count: infinite;
+}
+
+.container > p {
+  text-align:center;
+  opacity: 0.3;
+}
+
+.back_button {
+  margin-top: 100px;
+  letter-spacing: 7px;
+  text-align:center; 
+}
+
+.back_button > a {
+  font-size: 17px;
+  display:inline-block;
+  width: 52.5px;
+  padding-bottom:3.33px;
+  transition: 0.5s;
+  border-bottom-style: solid;
+  border-color: rgba(0,24,100,1);
+}
+
+.back_button > a:hover {
+  width: 107px;
+  letter-spacing:14px;
+}
+
+
+.back_button > a:after {
+  content: "//";
+  position: relative;
+  left: 55px;
+  opacity: 0;
+  transition: 0.35s;
+  letter-spacing: 7px;
+}
+
+.back_button > a:hover:after {
+  left: 5px;
+  opacity: 1;
+  letter-spacing:7px;
+}
